@@ -1,0 +1,75 @@
+############################################################
+# +------------------------------------------------------+ #
+# |                       AIGuard                          | 
+# |                    by DucksAreLavi                     | 
+# +------------------------------------------------------+ #
+############################################################
+
+# Similarity threshold for banned word detection (0.0 - 1.0)
+# The higher the value, the more precise the detection
+similarity_threshold: 0.60
+
+# List of banned words
+# You can add words in any language
+banned_words:
+  - "idiot"
+  - "nigger"
+  - "nigga"
+  - "nig"
+  - "bitch"
+  - "whore"
+  - "dumb"
+  - "stupid"
+  - "fuck"
+  - "shit"
+  - "bastard"
+  - "cunt"
+
+# Processing settings
+async_processing: true  # Asynchronous processing (recommended)
+
+# BungeeCord settings
+bungee:
+  enabled: true  # Enable BungeeCord support
+  channel: "aiguard:alerts"  # Channel name for cross-server communication
+
+# World settings (if empty - all worlds are enabled)
+worlds:
+  enabled: []
+
+# Server name (for BungeeCord identification)
+server_name: "Survival"
+
+# GUI Settings - You can change size and slots for each button
+gui:
+  ticket:
+    size: 27          # Must be a multiple of 9
+    info_slot: 11     # Info item slot
+    claim_slot: 15    # Claim button slot
+    close_slot: 26    # Close button slot
+    back_slot: 18     # Back button slot
+    teleport_server_enabled: false   # Show teleport to server button
+    teleport_server_slot: 12       # Teleport to server button slot
+    teleport_world_enabled: true   # Show teleport to world button
+    teleport_world_slot: 14        # Teleport to world button slot
+  history:
+    size: 54          # History GUI size (multiple of 9)
+    page_size: 45     # Tickets per page (top rows only)
+    back_slot: 49     # Close history button
+    prev_slot: 45     # Previous page button
+    next_slot: 53     # Next page button
+
+# Messages
+messages:
+  alert: "§c[AIGuard] §e{player} §fwrote a suspicious message: §7{message} §f| Banned Word: §c{banned_word} §f| Similarity: §6{similarity}%"
+
+# Advanced Settings
+advanced:
+  # Check private messages
+  check_private_messages: false
+  
+  # Log suspicious messages
+  log_suspicious_messages: true
+  
+  # Max alerts per player per day (0 = unlimited)
+  max_alerts_per_player_per_day: 0

@@ -1,0 +1,133 @@
+############################################################
+# AIGuard - Staff and Player Messages
+# All messages here are editable. You can use colors (&c etc.) and placeholders.
+# Placeholders:
+# {player} - Player name
+# {server} - Server name
+# {time} - Full time of report creation
+# {message} - Original message
+# {banned_word} - The matched banned word
+# {similarity} - Similarity percentage (integer)
+# {id} - Report ID
+############################################################
+
+staff:
+  # Message sent to staff when a suspicious message is detected
+  click_alert: "&c[AIGuard] &fSuspicious message detected &7&f - &eClick here &ffor details."
+  # Hover text for the clickable message
+  click_alert_hover: "&eClick to view message details."
+
+ticket:
+  # GUI title for a single ticket
+  title: "&8Suspicious Message #{id}"
+
+  # Item name showing report details
+  info_item_name: "&eDetails"
+  # Lore for the details item
+  info_item_lore:
+    - "&7Player: &f{player}"
+    - "&7Server: &f{server}"
+    - "&7World: &f{world}"
+    - "&7Time: &f{time}"
+    - "&7Message:"
+    - "&f{message}"
+    - ""
+    - "&7Banned Word: &c{banned_word}"
+    - "&7Similarity: &6{similarity}%"
+
+  # Button to claim the report
+  claim_button_name: "&aClaim Report"
+  claim_button_lore:
+    - "&7Click to handle this report."
+
+  # Button showing the report is already claimed
+  claimed_button_name: "&eHandled by: {staff}"
+  claimed_button_lore:
+    - "&7This report is already being handled."
+
+  # Button to close the report
+  close_button_name: "&cClose Report"
+  close_button_lore:
+    - "&7Click to close the report."
+
+  # Button to teleport to server
+  teleport_server_button_name: "&bTeleport to Server"
+  teleport_server_button_lore:
+    - "&7Click to switch to the report's server (&f{server}&7)."
+
+  # Button to teleport to world
+  teleport_world_button_name: "&dTeleport to World"
+  teleport_world_button_lore:
+    - "&7Click to teleport to the report's world (&f{world}&7)."
+
+  # Back button
+  back_button_name: "&7Back"
+  back_button_lore:
+    - "&7Click to return to the previous screen."
+
+messages:
+  # General system messages
+  ticket_claim_you: "&a[AIGuard] You are now handling report &7#{id}."
+  ticket_claim_broadcast: "&6[AIGuard] &e{staff} &fis now handling report &7#{id}."
+  ticket_already_claimed: "&c[AIGuard] This report is already handled by &e{staff}&c."
+  ticket_closed_you: "&a[AIGuard] You closed report &7#{id}."
+  ticket_closed_broadcast: "&6[AIGuard] &e{staff} &fclosed report &7#{id}."
+  ticket_not_found: "&c[AIGuard] Report not found or expired."
+  no_permission: "&c[AIGuard] You do not have permission to perform this action."
+  only_players: "&c[AIGuard] Only players can use this command."
+
+  status_header: "&6[AIGuard] Ticket Status:"
+  status_line_open: "&7Open: &f{open}"
+  status_line_claimed: "&7In Progress: &f{claimed}"
+  status_line_closed: "&7Closed: &f{closed}"
+
+  messages_header: "&6[AIGuard] Available Messages:"
+  messages_entry: "&7- &f{key}&7: &r{value}"
+  messages_set_success: "&a[AIGuard] Message &f{key} &aupdated."
+  messages_set_usage: "&cUsage: /aiwatch messages set <key> <value...>"
+  messages_reload_success: "&a[AIGuard] messages.yml reloaded."
+
+  staff_alerts_muted_on: "&c[AIGuard] You have muted ticket alerts."
+  staff_alerts_muted_off: "&a[AIGuard] You have enabled ticket alerts."
+
+  help_header: "&6[AIGuard] Available Commands:"
+  help_reload: "&e/aiwatch reload &7- Reload configuration and messages."
+  help_status: "&e/aiwatch status &7- Show ticket status."
+  help_history: "&e/aiwatch history &7- Open history GUI."
+  help_ticket: "&e/aiwatch ticket <id> &7- Open specific ticket GUI."
+  help_alerts: "&e/aiwatch alerts &7- Toggle staff alerts."
+
+  teleport_server_not_available: "&c[AIGuard] Cannot teleport to server (BungeeCord disabled or not configured)."
+  teleport_world_missing: "&c[AIGuard] This report has no world info."
+  teleport_world_not_found: "&c[AIGuard] World &f{world} &cis not loaded on this server."
+  teleport_world_success: "&a[AIGuard] Teleported to world &f{world}&a."
+
+history:
+  # History GUI Title
+  gui_title: "&8Report History"
+
+  # History item names by status
+  item_name_open: "&aOpen Report #{id}"
+  item_name_claimed: "&eIn Progress Report #{id}"
+  item_name_closed: "&cClosed Report #{id}"
+
+  # Base lore for history item
+  item_lore:
+    - "&7Player: &f{player}"
+    - "&7World: &f{world}"
+    - "&7Time: &f{time}"
+
+  # Close history button
+  back_button_name: "&7Close History"
+  back_button_lore:
+    - "&7Click to close report history."
+
+  # Previous page button
+  prev_page_name: "&ePrevious Page"
+  prev_page_lore:
+    - "&7Click to go to previous page."
+
+  # Next page button
+  next_page_name: "&eNext Page"
+  next_page_lore:
+    - "&7Click to go to next page."

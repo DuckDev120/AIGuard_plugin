@@ -1,0 +1,30 @@
+name: AIGuard
+version: 1.0.0
+main: com.duckslavi.aiguard.AIGuard
+api-version: 1.20
+author: DucksAreLavi
+description: AI-powered chat monitor that detects similar or disguised banned words
+
+commands:
+  aiguard:
+    description: Management commands
+    usage: /aiguard <reload>
+    permission: aiwatch.admin
+    aliases: [ag, aiwatch]
+
+permissions:
+  aiwatch.admin:
+    description: Admin permission - access to management commands
+    default: op
+  aiwatch.alert:
+    description: Permission to receive alerts about suspicious messages
+    default: op
+  aiwatch.*:
+    description: All permissions
+    default: op
+    children:
+      aiwatch.admin: true
+      aiwatch.alert: true
+
+depend: []
+softdepend: []
